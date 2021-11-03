@@ -39,4 +39,25 @@ class LoopsAndIfsTest {
             System.out.println(s);
         }
     }
+
+    @Test
+    void switchTest() {
+        String season = "Winter";
+        switch (season) {
+            case "Spring":
+                System.out.println("Mamy aktualnie wiosnę");
+                break;
+            case "Summer":
+                System.out.println("Mamy aktualnie lato");
+                break;
+            case "Autumn":
+                System.out.println("Mamy aktualnie jesień");
+                break;
+            case "Winter":
+                System.out.println("Mamy aktualnie zimę");
+                break;
+            default:
+                System.out.println("Nie znam takiej pory roku");
+        }
+    }
 }

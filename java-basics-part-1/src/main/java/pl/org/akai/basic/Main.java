@@ -40,6 +40,7 @@ public class Main {
 //                return 0;
 //            }
 //        };
+//        AbstractClass abstractClass = new AbstractClass();
 //
 //        System.out.println(EnumExample.EMPLOYEE.getValue());
 //
