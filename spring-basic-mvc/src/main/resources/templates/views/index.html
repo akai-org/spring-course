@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Best programming lanuages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/navbar.css}"/>
+    <link rel="shortcut icon" th:href="@{/img/favicon.svg}">
+</head>
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<main class="container-sm mt-1">
+    <table class="table table-striped">
+        <tr class="header-text-size">
+            <th>ID</th>
+            <th>Nazwa</th>
+            <th>Ocena</th>
+        </tr>
+        <tr th:each="programmingLanguage : ${programmingLanguages}" class="table-text-size">
+            <td th:text="${programmingLanguage.id}">ID</td>
+            <td th:text="${programmingLanguage.name}">Nazwa</td>
+            <td th:text="${programmingLanguage.rating != null ? programmingLanguage.rating : 'Brak oceny'}">Właściciel</td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>
