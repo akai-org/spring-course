@@ -1,0 +1,12 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    container_name: test-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=q1w2e3r4
+      - MYSQL_DATABASE=test
+      - MYSQL_PASSWORD=q1w2e3r4
+    ports:
+      - "3306:3306"
