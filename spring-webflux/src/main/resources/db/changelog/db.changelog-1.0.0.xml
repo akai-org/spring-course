@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="202205012137" author="Szczepaniak-M">
+        <comment>Initialize tables</comment>
+        <createTable tableName="category">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="book">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="category" type="INT">
+                <constraints nullable="false" foreignKeyName="fk_category_id" references="category(id)"/>
+            </column>
+            <column name="description" type="VARCHAR(32000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="202205012138" author="Szczepaniak-M">
+        <comment>Fill category table</comment>
+        <insert tableName="category">
+            <column name="name">Comedy</column>
+        </insert>
+        <insert tableName="category">
+            <column name="name">Drama</column>
+        </insert>
+        <insert tableName="category">
+            <column name="name">Family</column>
+        </insert>
+        <insert tableName="category">
+            <column name="name">Science-Fiction</column>
+        </insert>
+        <insert tableName="category">
+            <column name="name">Fantasy</column>
+        </insert>
+        <insert tableName="category">
+            <column name="name">Action</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
